@@ -1,0 +1,40 @@
+resource_types:
+- name: cf-cli-resource
+  type: docker-image
+  source:
+    repository: nulldriver/cf-cli-resource
+    tag: latest
+
+resources:
+- name: pipeline-resource
+  type: git
+  source:
+    uri: ((pipeline-resource-uri))
+    branch: ((pipeline-resource-branch))
+
+- name: cf-env
+  type: cf-cli-resource
+  source:
+    api: {{cf-api}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    org: {{cf-org}}
+    space: {{cf-space}}
+    skip_cert_check: true
+
+
+jobs:
+- name: block1
+  plan:
+  - get: pipeline-resource
+  - trigger: true
+  - task: cf-start
+    file: pipeline-resource/tasks/cf-cli.yml
+    params:
+       the-app: maven-app1
+  - put: start-the-app
+    resource: cf-env
+    params:
+      command: start
+      command_file: cf_command/params.yml
+
