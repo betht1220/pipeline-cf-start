@@ -40,7 +40,7 @@ jobs:
           EOF
       outputs:
         - name: cf_command
-  - put: cf-start
+  - put: start-the-app
     resource: cf-env
     params:
       command: start
