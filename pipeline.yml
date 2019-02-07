@@ -34,15 +34,15 @@ jobs:
         - -excl
         - |-
           cat > cf_command/params.yml <<EOF
-          command: delete
-          app_name: {{app-to-be-deleted}}
+          command: start
+          app_name: {{the-app}}
           delete_mapped_routes: true
           EOF
       outputs:
         - name: cf_command
-  - put: cf-delete
+  - put: cf-start
     resource: cf-env
     params:
-      command: delete
+      command: start
       command_file: cf_command/params.yml
 

@@ -9,4 +9,4 @@ cf-username: admin
 cf-password: admin
 
 # 
-app-to-be-deleted: maven-app1
+the-app: maven-app1
