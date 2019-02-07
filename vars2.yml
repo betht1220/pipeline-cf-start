@@ -8,5 +8,4 @@ cf-space: cfdev-space
 cf-username: admin
 cf-password: admin
 
-# 
-the-app: maven-app1
+# the-app: maven-app1
