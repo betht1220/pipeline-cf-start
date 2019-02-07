@@ -10,4 +10,4 @@ inputs:
   - name: pipeline-resource
 
 run:
-  path: config-repo/tasks/cf-cli.sh
+  path: pipeline-resource/tasks/cf-cli.sh

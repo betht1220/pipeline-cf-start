@@ -32,9 +32,4 @@ jobs:
     file: pipeline-resource/tasks/cf-cli.yml
     params:
        the-app: maven-app1
-  - put: start-the-app
-    resource: cf-env
-    params:
-      command: start
-      command_file: cf_command/params.yml
 
