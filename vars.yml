@@ -1,2 +1,12 @@
 pipeline-resource-uri: https://github.com/betht1220/pipeline-cf-start.git
 pipeline-resource-branch: master
+
+# Deployment to Cloud Foundry
+cf-api: https://api.dev.cfdev.sh # cf target gives api endpoint
+cf-org: cfdev-org
+cf-space: cfdev-space
+cf-username: admin
+cf-password: admin
+
+# 
+app-to-be-deleted: maven-app1

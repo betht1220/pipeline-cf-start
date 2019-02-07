@@ -49,7 +49,7 @@ jobs:
         - |-
           cat > cf_command/params.yml <<EOF
           command: delete
-          app_name: {{app_to_be_deleted}}
+          app_name: {{app-to-be-deleted}}
           delete_mapped_routes: true
           EOF
       outputs:
